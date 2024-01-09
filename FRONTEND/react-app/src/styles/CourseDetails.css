@@ -1,0 +1,47 @@
+/* CourseDetails.css */
+
+.course-details-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-transform: capitalize;
+}
+
+.course-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details-info {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.modules-title {
+  font-size: 1.8rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+.modules-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modules-list li {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  padding-left: 15px;
+  position: relative;
+  color: #444;
+}

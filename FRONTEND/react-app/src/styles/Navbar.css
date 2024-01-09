@@ -1,0 +1,151 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #000000, #2d275f);
+  color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.home-button {
+  padding: 8px 10px;
+  margin-left: 5px;
+  background-color: #57738f;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.home-button:hover {
+  background-color: #34495e;
+}
+
+.middle-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 4px;
+  padding: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+}
+
+.search-button {
+  padding: 8px 10px;
+  margin-left: 5px;
+  background-color: #406181;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  margin-top: 0px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button:hover {
+  background-color: #34495e;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  color: #ecf0f1;
+}
+
+.divider {
+  color: #ecf0f1;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .middle-section {
+    max-width: none;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-input,
+  .search-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .auth-links {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,11 @@
+body {
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+    overflow-y: scroll; 
+  }
+  
+  /* Webkit (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 0px; /* Adjust the width of the scrollbar */
+  }
+  

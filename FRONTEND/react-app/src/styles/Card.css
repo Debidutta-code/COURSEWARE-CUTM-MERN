@@ -1,0 +1,54 @@
+/* Card.css */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 0 1 calc(30% - 20px);
+  border: 1px solid #000000; /* Blue border color */
+  padding: 10px;
+  margin: 20px;
+  background-color: #efefef; /* Blue background color */
+  color: #0e0f10; /* Light gray text color */
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 8px 8px 40px rgba(106, 88, 88, 0.2);
+}
+
+.card-content {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card h2 {
+  font-size: 1.7rem;
+}
+
+.card p {
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 1 calc(45% - 20px);
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    flex: 0 1 calc(100% - 20px);
+  }
+}
