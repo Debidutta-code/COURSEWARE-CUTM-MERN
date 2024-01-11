@@ -31,9 +31,9 @@ const LoginAdministrator = () => {
     const data = await response.json();
     if (data.success) {
       // push to the dashboard
-      dispatch({type:"USER", payload:true})
+      dispatch({ type: "ADMIN", payload: "admin" });
+      console.log("hello world hev")
       history.push("/admindashboard");
-      console.log(data.teacher);
     } else {
       console.log(data.message);
     }

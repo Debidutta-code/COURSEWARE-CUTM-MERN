@@ -44,7 +44,7 @@
   }
   
   button {
-    background-color: #007bff;
+    background-color: #14569d;
     color: #fff;
     padding: 15px;
     border: none;
@@ -55,7 +55,7 @@
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #0c3764;
   }
   
   .module-input-container {
@@ -65,7 +65,7 @@
   }
   
   .remove-module-button {
-    background-color: #dc3545;
+    background-color: #f12727;
     color: #fff;
     padding: 15px; /* Matched the padding to the input field */
     border: none;
@@ -78,6 +78,6 @@
   }
   
   .remove-module-button:hover {
-    background-color: #bd2130;
+    background-color: #c20013;
   }
   

@@ -51,19 +51,23 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <div>
-        <button onClick={handleRefresh}>Refresh Data</button>
+        <button onClick={handleRefresh} className='refresh-data-btn'>Refresh Courses</button>
       </div>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
       {!loading && !error && (
         <div className="card-container">
-          {filteredCourses.map((course, index) => (
-            <Card
-              key={index}
-              course={course}
-            />
-          ))}
+          {filteredCourses.length === 0 ? (
+            <p>Error code: 404, Couldn't Find " {search} " </p>
+          ) : (
+            filteredCourses.map((course, index) => (
+              <Card
+                key={index}
+                course={course}
+              />
+            ))
+          )}
         </div>
       )}
     </div>

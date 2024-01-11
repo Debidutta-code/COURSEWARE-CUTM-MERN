@@ -1,0 +1,38 @@
+    /* Footer.css */
+      
+      .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+    .teacher-dashboard .footer{
+        display: none;
+        overflow: hidden;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        /* Add styles for the logo if needed */
+        max-width: 20px;
+        margin-bottom: -23px;
+    }
+    
+    .footer-text {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .copyright,
+    .design {
+        font-size: 14px;
+        margin: 5px 25px; /* Adjusted to have margin only on the top and bottom */
+    }
+    

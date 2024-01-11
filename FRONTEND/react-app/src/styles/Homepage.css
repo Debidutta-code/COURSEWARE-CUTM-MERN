@@ -2,12 +2,20 @@
 .homepage {
     text-align: center;
     margin: 20px;
+    color: black;
+    min-height: 59.7vh;
   }
   
   .homepage h1 {
-    color: #333;
+    color: #000000;
     margin-bottom: 20px;
   }
   
-
+  .refresh-data-btn{
+    background-color: rgb(98, 72, 147);
+  }
   
+  .refresh-data-btn:hover{
+    background-color: rgb(53, 27, 102);
+
+  }

@@ -31,7 +31,7 @@ const Login = () => {
     const data = await response.json();
     if (data.success) {
       // push to the dashboard
-      dispatch({type:"USER", payload:true})
+      dispatch({ type: "TEACHER", payload: "teacher" });
       history.push("/teacherdashboard");
       console.log(data.teacher);
     } else {

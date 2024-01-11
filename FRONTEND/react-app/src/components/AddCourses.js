@@ -94,7 +94,7 @@ const AddCourses = () => {
                   className="remove-module-button"
                   onClick={() => handleRemoveModule(index)}
                 >
-                  -
+                  Delete
                 </button>
               )}
             </div>

@@ -10,12 +10,12 @@ const Navbar = () => {
   const {state, dispatch} = useContext(UserContext);
 
   const RenderMenu = () => {
-    if(state) {
+    if (state === "admin" || state === "teacher") {
       return (
         <div className="auth-links">
-          <Link to='/logout' className="nav-link">logout</Link>
+          <Link to='/logout' className="nav-link">Logout</Link>
         </div>
-      )
+      );
     }
     else{
       return(
@@ -29,12 +29,20 @@ const Navbar = () => {
   }
 
   const Homeordashboard = () => {
-    if(state){
+    if(state === "teacher"){
       return(
         <div className="left-section">
-          <Link to="/teacherdashboard"> <button type='button' className='home-button'>Dashboard</button> </Link>
-          <Link to="/addcourses"> <button type='button' className='home-button'>Add Courses</button> </Link>
-          <Link to="/addcourses"> <button type='button' className='home-button'>Delete Courses</button> </Link>
+          <Link to="/teacherdashboard"> <button type='button' className='teacher-home-button'>Dashboard</button> </Link>
+          <Link to="/addcourses"> <button type='button' className='teacher-home-button'>Add Courses</button> </Link>
+          <Link to="/addcourses"> <button type='button' className='teacher-home-button'>Delete Courses</button> </Link>
+          {/* <button type="button" className="home-button"><Link to="/" className="nav-link">Home</Link></button> */}
+        </div>
+      )
+    }
+    else if(state === "admin"){
+      return(
+        <div className="left-section">
+          <Link to="/admindashboard"> <button type='button' className='teacher-home-button'>Dashboard</button> </Link>
           {/* <button type="button" className="home-button"><Link to="/" className="nav-link">Home</Link></button> */}
         </div>
       )

@@ -19,13 +19,14 @@
   border-radius: 8px;
   box-sizing: border-box;
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-  background: linear-gradient(145deg, #e4e5e7, #ffffff);
+  transition: 0.4s;
+  background: linear-gradient(150deg, #ccff0010, #0033ff10);
   cursor: pointer;
 }
 
 .card:hover {
   transform: scale(1.08);
+  background: linear-gradient(150deg, #ccff0019, #0033ff1b);
   box-shadow: 8px 8px 40px rgba(106, 88, 88, 0.2);
 }
 
@@ -36,6 +37,7 @@
 
 .card h2 {
   font-size: 1.7rem;
+  color: rgb(8, 6, 56);
 }
 
 .card p {

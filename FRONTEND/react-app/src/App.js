@@ -12,6 +12,7 @@ import TeacherDashboard from './components/TeacherDashboard';
 import Logout from './authentication/Logout';
 import AddCourses from './components/AddCourses';
 import Admindashboard from './components/AdminDashboard';
+import Footer from './components/Footer';
 
 export const UserContext = createContext();
 
@@ -35,6 +36,7 @@ function App() {
           <Route path = '/addcourses'> <AddCourses /> </Route>
         </Switch>
         </UserContext.Provider>
+        <Footer></Footer>
     </Router>
   );
 } 

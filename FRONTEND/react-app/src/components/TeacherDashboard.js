@@ -25,40 +25,40 @@ const TeacherDashboard = () => {
   ];
 
   return (
-    <div className="teacher-dashboard">
-      <div className="content">
-        <section className="classes-section">
-          <h2>Classes</h2>
-          <ul>
-            {classes.map((cls) => (
-              <li key={cls.id}>
-                {cls.name} - {cls.students} students
-              </li>
-            ))}
-          </ul>
-        </section>
+      <div className="teacher-dashboard">
+        <div className="content">
+          <section className="classes-section">
+            <h2>Classes</h2>
+            <ul>
+              {classes.map((cls) => (
+                <li key={cls.id}>
+                  {cls.name} - {cls.students} students
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="tasks-section">
-          <h2>Tasks</h2>
-          <ul>
-            {tasks.map((task) => (
-              <li key={task.id}>
-                {task.title} - {task.status}
-              </li>
-            ))}
-          </ul>
-        </section>
+          <section className="tasks-section">
+            <h2>Tasks</h2>
+            <ul>
+              {tasks.map((task) => (
+                <li key={task.id}>
+                  {task.title} - {task.status}
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="announcements-section">
-          <h2>Announcements</h2>
-          <ul>
-            {announcements.map((announcement) => (
-              <li key={announcement.id}>{announcement.content}</li>
-            ))}
-          </ul>
-        </section>
+          <section className="announcements-section">
+            <h2>Announcements</h2>
+            <ul>
+              {announcements.map((announcement) => (
+                <li key={announcement.id}>{announcement.content}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </div>
-    </div>
   );
 };
 
