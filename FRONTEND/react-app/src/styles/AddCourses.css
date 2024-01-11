@@ -1,0 +1,83 @@
+/* AddCourses.css */
+
+.add-courses-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+    background-color: #f4f4f4;
+  }
+  
+  .add-courses-form {
+    background-color: #fff;
+    border: 1px solid #ddd; /* Lighter border color for a softer look */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Increased max-width for a more spacious form */
+    width: 100%;
+  }
+  
+  .add-courses-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Increased margin for more separation */
+  }
+  
+  label {
+    display: block;
+    margin: 15px 0 10px; /* Increased margin for more spacing */
+    color: #333;
+    font-size: 16px;
+  }
+  
+  input {
+    width: calc(100% - 0px); /* Adjusted width to accommodate the button margin */
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: calc(100% - 0px); /* Adjusted width to match the input field */
+    font-size: 18px; /* Increased font size for emphasis */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .module-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .remove-module-button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 15px; /* Matched the padding to the input field */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-bottom: 7px;
+    max-width: 100px;
+  }
+  
+  .remove-module-button:hover {
+    background-color: #bd2130;
+  }
+  

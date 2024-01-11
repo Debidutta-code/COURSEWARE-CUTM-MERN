@@ -35,9 +35,45 @@ const courseSchema = new mongoose.Schema({
     type: Object,
     required: true,
   },
+  subjectCode: {
+    type:String,
+    required: true,
+  }
+});
+
+const teacherSchema = new mongoose.Schema({
+  teacherName: {
+    type: String,
+    required: true,
+  },
+  teacherEmail: {
+    type: String,
+    required: true,
+  },
+  teacherPassword: {
+    type: String,
+    required: true,
+  },
+});
+
+const adminSchema = new mongoose.Schema({
+  adminName: {
+    type: String,
+    required: true,
+  },
+  adminEmail: {
+    type: String,
+    required: true,
+  },
+  adminPassword: {
+    type: String,
+    required: true,
+  },
 });
 
 const CourseDetails = mongoose.model('CourseDetails', courseSchema);
+const TeacherDetails = mongoose.model('teacherdetails', teacherSchema);
+const AdminDetails = mongoose.model('admindetails', adminSchema);
 
 const server = express();
 
@@ -67,6 +103,40 @@ server.get('/cardclicked/:subjectCode', async (req, res) => {
         console.log(error);
         res.status(500).json({ error: `Internal Server Error: ${error.message}` });
     }
+});
+
+server.get('/teacher/authentication/:username/:password', async (req, res) => {
+  const { username, password } = req.params;
+
+  try {
+    const teacher = await TeacherDetails.findOne({ 'teacher-email': username, 'teacher-password': password });
+
+    if (teacher) {
+      res.json({ success: true, teacher: teacher });
+    } else {
+      res.json({ success: false, message: 'Not Found' });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: `Internal Server Error: ${error.message}` });
+  }
+});
+
+server.get('/administrator/authentication/:username/:password', async (req, res) => {
+  const { username, password } = req.params;
+
+  try {
+    const teacher = await AdminDetails.findOne({ 'admin-email': username, 'admin-password': password });
+
+    if (teacher) {
+      res.json({ success: true, teacher: teacher });
+    } else {
+      res.json({ success: false, message: 'Not Found' });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: `Internal Server Error: ${error.message}` });
+  }
 });
 
 

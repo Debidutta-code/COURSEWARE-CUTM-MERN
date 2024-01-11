@@ -36,9 +36,11 @@ const Homepage = () => {
   }, [search]); // Empty dependency array to run the effect only once on mount
 
   const filteredCourses = courses.filter(course =>
-    search ?
-      course['subject-name'].toLowerCase().includes(search.toLowerCase()) :
-      true
+    (search ?
+        course['subject-name'].toLowerCase().includes(search.toLowerCase()) ||
+        course['subject-code'].toLowerCase().includes(search.toLowerCase()) :
+        true
+    )
   );
 
   const handleRefresh = () => {

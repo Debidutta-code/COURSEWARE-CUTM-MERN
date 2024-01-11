@@ -3,8 +3,55 @@ import '../styles/Navbar.css';
 import img from '../images/centurion1.jfif';
 import { Link } from 'react-router-dom';
 import SearchOption from './SearchOption';
+import { UserContext } from '../App';
+import { useContext } from 'react';
 
 const Navbar = () => {
+  const {state, dispatch} = useContext(UserContext);
+
+  const RenderMenu = () => {
+    if(state) {
+      return (
+        <div className="auth-links">
+          <Link to='/logout' className="nav-link">logout</Link>
+        </div>
+      )
+    }
+    else{
+      return(
+        <div className="auth-links">
+          <Link to="/login" className="nav-link">Teacher</Link>
+          <span className="divider">|</span>
+          <Link to="/loginadministrator" className="nav-link">Administrator</Link>
+        </div>
+      )
+    }
+  }
+
+  const Homeordashboard = () => {
+    if(state){
+      return(
+        <div className="left-section">
+          <Link to="/teacherdashboard"> <button type='button' className='home-button'>Dashboard</button> </Link>
+          <Link to="/addcourses"> <button type='button' className='home-button'>Add Courses</button> </Link>
+          <Link to="/addcourses"> <button type='button' className='home-button'>Delete Courses</button> </Link>
+          {/* <button type="button" className="home-button"><Link to="/" className="nav-link">Home</Link></button> */}
+        </div>
+      )
+    }
+    else{
+      return(
+        <>
+          <div className="left-section">
+            <Link to="/home"> <button type='button' className='home-button'>Home</button> </Link>
+            {/* <button type="button" className="home-button"><Link to="/" className="nav-link">Home</Link></button> */}
+          </div>
+          <SearchOption></SearchOption>
+
+        </>
+      )
+    }
+  }
 
   return (
     <div className="navbar">
@@ -12,17 +59,9 @@ const Navbar = () => {
         <img src={img} alt="Logo" className="logo" />
         <h1 className="company-name">COURSEWARE CUTM</h1>
       </div>
-      <div className="left-section">
-        <Link to="/home"> <button type='button' className='home-button'>Home</button> </Link>
-        {/* <button type="button" className="home-button"><Link to="/" className="nav-link">Home</Link></button> */}
-      </div>
-      <SearchOption></SearchOption>
+      <Homeordashboard />
       <div className="right-section">
-        <div className="auth-links">
-          <Link to="/login" className="nav-link">Login</Link>
-          <span className="divider">|</span>
-          <Link to="/register" className="nav-link">Register</Link>
-        </div>
+        <RenderMenu/>
       </div>
     </div>
   );

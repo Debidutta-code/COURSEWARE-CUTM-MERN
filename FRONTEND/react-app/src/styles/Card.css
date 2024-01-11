@@ -20,6 +20,7 @@
   box-sizing: border-box;
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
+  background: linear-gradient(145deg, #e4e5e7, #ffffff);
   cursor: pointer;
 }
 
