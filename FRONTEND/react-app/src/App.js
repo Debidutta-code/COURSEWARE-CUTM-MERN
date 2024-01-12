@@ -13,6 +13,9 @@ import Logout from './authentication/Logout';
 import AddCourses from './components/AddCourses';
 import Admindashboard from './components/AdminDashboard';
 import Footer from './components/Footer';
+import ModifyCourses from './components/ModifyCourses';
+import DeleteCourses from './components/DeleteCourses';
+import UserProfile from './components/UserProfile';
 
 export const UserContext = createContext();
 
@@ -34,6 +37,9 @@ function App() {
           <Route path = '/teacherdashboard'> <TeacherDashboard /> </Route>
           <Route path = '/admindashboard'> <Admindashboard /> </Route>
           <Route path = '/addcourses'> <AddCourses /> </Route>
+          <Route path = '/modifycourses'> <ModifyCourses /> </Route>
+          <Route path = '/deletecourses'> <DeleteCourses /> </Route>
+          <Route path = '/userprofile'> <UserProfile /> </Route>
         </Switch>
         </UserContext.Provider>
         <Footer></Footer>

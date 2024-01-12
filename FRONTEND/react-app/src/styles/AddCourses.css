@@ -1,83 +1,87 @@
 /* AddCourses.css */
 
 .add-courses-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 150vh;
-    background-color: #f4f4f4;
-  }
-  
-  .add-courses-form {
-    background-color: #fff;
-    border: 1px solid #ddd; /* Lighter border color for a softer look */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    max-width: 500px; /* Increased max-width for a more spacious form */
-    width: 100%;
-  }
-  
-  .add-courses-form h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px; /* Increased margin for more separation */
-  }
-  
-  label {
-    display: block;
-    margin: 15px 0 10px; /* Increased margin for more spacing */
-    color: #333;
-    font-size: 16px;
-  }
-  
-  input {
-    width: calc(100% - 0px); /* Adjusted width to accommodate the button margin */
-    padding: 15px;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  button {
-    background-color: #14569d;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: calc(100% - 0px); /* Adjusted width to match the input field */
-    font-size: 18px; /* Increased font size for emphasis */
-  }
-  
-  button:hover {
-    background-color: #0c3764;
-  }
-  
-  .module-input-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .remove-module-button {
-    background-color: #f12727;
-    color: #fff;
-    padding: 15px; /* Matched the padding to the input field */
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-bottom: 7px;
-    max-width: 100px;
-  }
-  
-  .remove-module-button:hover {
-    background-color: #c20013;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.add-courses-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  margin: 20px; /* Added margin for separation */
+  margin-left: 190px;
+}
+
+.addcourses-menu-item:active{
+  transform: scale(0.85);
+}
+
+.add-courses-form h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 10px;
+  color: #333;
+  font-size: 16px;
+}
+
+input {
+  width: calc(100% - 30px);
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+}
+
+button {
+  background-color: #14569d;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: calc(100% - 30px);
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #0c3764;
+}
+
+.module-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.remove-module-button {
+  background-color: #f12727;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-bottom: 7px;
+  max-width: 100px;
+}
+
+.remove-module-button:hover {
+  background-color: #c20013;
+}

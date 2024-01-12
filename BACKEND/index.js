@@ -114,7 +114,7 @@ server.get('/teacher/authentication/:username/:password', async (req, res) => {
     if (teacher) {
       res.json({ success: true, teacher: teacher });
     } else {
-      res.json({ success: false, message: 'Not Found' });
+      res.json({ success: false, message: 'User Not Found' });
     }
   } catch (error) {
     console.log(error);
@@ -131,7 +131,7 @@ server.get('/administrator/authentication/:username/:password', async (req, res)
     if (teacher) {
       res.json({ success: true, teacher: teacher });
     } else {
-      res.json({ success: false, message: 'Not Found' });
+      res.json({ success: false, message: 'User Not Found' });
     }
   } catch (error) {
     console.log(error);

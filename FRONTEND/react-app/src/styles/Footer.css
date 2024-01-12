@@ -36,3 +36,13 @@
         margin: 5px 25px; /* Adjusted to have margin only on the top and bottom */
     }
     
+    @media only screen and (min-width: 768px) {
+        .footer-text {
+          flex-direction: row;
+        }
+      
+        .copyright,
+        .design {
+          margin: 0 15px; /* Adjusted margin for responsiveness */
+        }
+      }

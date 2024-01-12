@@ -1,51 +1,28 @@
-/* TeacherDashboard.css */
+/* teacherdashboard.css */
 
 .teacher-dashboard {
   display: flex;
-  flex-direction: column;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh; /* Set a minimum height to ensure the content can fill the viewport */
-}
-
-.navbar {
-  background-color: #1e3a8a; /* Dark blue */
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.navbar h1 {
-  margin: 0;
-  font-size: 1.8rem;
 }
 
 .content {
-  flex-grow: 1; /* Allow the content to grow and fill the available space */
+  flex-grow: 1;
   padding: 20px;
-  background-color: #f4f4f4; /* Light gray */
 }
 
-h2 {
-  color: #1e3a8a; /* Dark blue */
+.dashboard-menu-item:active{
+  transform: scale(0.85);
+}
+
+.main-header {
+  background-color: #1e2a38;
+  padding: 15px;
+  color: #fff;
   margin-bottom: 20px;
 }
 
-.classes-section,
-.tasks-section,
-.announcements-section {
-  margin-bottom: 30px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
+.main-content {
   background-color: #fff;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }

@@ -12,7 +12,7 @@ const Homepage = () => {
   console.log({search});
 
   const fetchData = async () => {
-    try {
+    try { 
       const response = await fetch('http://localhost:8080/homepagecontent');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);

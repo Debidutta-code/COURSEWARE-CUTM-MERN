@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import '../styles/AddCourses.css'; // Import the CSS file
+import Sidebar from './Sidebar';
 
 const AddCourses = () => {
   const [subjectName, setSubjectName] = useState('');
@@ -40,72 +41,88 @@ const AddCourses = () => {
   };
 
   return (
-    <div className="add-courses-container">
-      <form className="add-courses-form" onSubmit={handleSubmit}>
-        <h2>Add Courses</h2>
+    <div className="teacher-dashboard">
+      {/* Include the Sidebar component with teacherData prop */}
+      <Sidebar />
 
-        <label>
-          Subject Name:
-          <input type="text" value={subjectName}
-          required
-           onChange={(e) => setSubjectName(e.target.value)} />
-        </label>
+      <div className="content">
+        {/* Add main content here */}
+        <div className="main-content">
+          <form className="add-courses-form" onSubmit={handleSubmit}>
+            <h1>Add Courses</h1>
 
-        <label>
-          Subject Code:
-          <input type="text" value={subjectCode}
-          required
-            onChange={(e) => setSubjectCode(e.target.value)} />
-        </label>
-
-        <label>
-          Subject Credit:
-          <input
-            type="number"
-            value={subjectCredit}
-            required
-            onChange={(e) => setSubjectCredit(e.target.value)}
-          />
-        </label>
-
-        <label>
-          Subject Teacher:
-          <input
-            type="text"
-            value={subjectTeacher}
-            required
-            onChange={(e) => setSubjectTeacher(e.target.value)}
-          />
-        </label>
-
-        <label>
-          Subject Modules:
-          {subjectModules.map((module, index) => (
-            <div key={index} className="module-input-container">
+            <label>
+              Subject Name:
               <input
                 type="text"
-                placeholder={`Module ${index + 1}`}
-                value={module.module}
-                onChange={(e) => handleModuleChange(index, e.target.value)}
+                value={subjectName}
+                required
+                onChange={(e) => setSubjectName(e.target.value)}
               />
-              {index > 0 && (
-                <button
-                  type="button"
-                  className="remove-module-button"
-                  onClick={() => handleRemoveModule(index)}
-                >
-                  Delete
-                </button>
-              )}
-            </div>
-          ))}
-          <button type="button" onClick={handleAddModule}>
-            Add Module
-          </button>
-        </label>
+            </label>
 
-        <button type="submit">Add Course</button>
-      </form>
+            // AddCourses.js (continued)
+
+            <label>
+              Subject Code:
+              <input
+                type="text"
+                value={subjectCode}
+                required
+                onChange={(e) => setSubjectCode(e.target.value)}
+              />
+            </label>
+
+            <label>
+              Subject Credit:
+              <input
+                type="number"
+                value={subjectCredit}
+                required
+                onChange={(e) => setSubjectCredit(e.target.value)}
+              />
+            </label>
+
+            <label>
+              Subject Teacher:
+              <input
+                type="text"
+                value={subjectTeacher}
+                required
+                onChange={(e) => setSubjectTeacher(e.target.value)}
+              />
+            </label>
+
+            <label>
+              Subject Modules:
+              {subjectModules.map((module, index) => (
+                <div key={index} className="module-input-container">
+                  <input
+                    type="text"
+                    placeholder={`Module ${index + 1}`}
+                    value={module.module}
+                    onChange={(e) => handleModuleChange(index, e.target.value)}
+                  />
+                  {index > 0 && (
+                    <button
+                      type="button"
+                      className="remove-module-button"
+                      onClick={() => handleRemoveModule(index)}
+                    >
+                      Delete
+                    </button>
+                  )}
+                </div>
+              ))}
+              <button type="button" onClick={handleAddModule}>
+                Add Module
+              </button>
+            </label>
+
+            <button type="submit">Add Course</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

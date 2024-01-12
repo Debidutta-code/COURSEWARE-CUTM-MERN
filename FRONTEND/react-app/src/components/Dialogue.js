@@ -1,12 +1,12 @@
 import React from 'react';
-import './Dialogue.css';
+import '../styles/Dialogue.css';
 
 const Dialogue = ({ message, onClose }) => {
   return (
     <div className="dialog-overlay">
       <div className="dialog">
         <div className="dialog-content">
-          <p>{message}</p>
+          <h2 className='dialog-message'>{message}</h2>
           <button onClick={onClose}>Close</button>
         </div>
       </div>
