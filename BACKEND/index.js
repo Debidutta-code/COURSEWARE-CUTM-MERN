@@ -36,7 +36,7 @@ const courseSchema = new mongoose.Schema({
     required: true,
   },
   subjectCode: {
-    type:String,
+    type: String,
     required: true,
   }
 });
@@ -91,18 +91,18 @@ server.get('/homepagecontent', async (req, res) => {
 });
 
 server.get('/cardclicked/:subjectCode', async (req, res) => {
-    const subjectCode = req.params.subjectCode;  // Use req.params.subjectCode to access the parameter
-    try {
-        const course = await CourseDetails.find({ 'subject-code': subjectCode });
-        if (course.length > 0) {
-            res.json({ success: true, course : course[0] });
-        } else {
-            res.json({ success: false, message: 'Not Found' });
-        }
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: `Internal Server Error: ${error.message}` });
+  const subjectCode = req.params.subjectCode;  // Use req.params.subjectCode to access the parameter
+  try {
+    const course = await CourseDetails.find({ 'subject-code': subjectCode });
+    if (course.length > 0) {
+      res.json({ success: true, course: course[0] });
+    } else {
+      res.json({ success: false, message: 'Not Found' });
     }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: `Internal Server Error: ${error.message}` });
+  }
 });
 
 server.get('/teacher/authentication/:username/:password', async (req, res) => {
@@ -126,10 +126,10 @@ server.get('/administrator/authentication/:username/:password', async (req, res)
   const { username, password } = req.params;
 
   try {
-    const teacher = await AdminDetails.findOne({ 'admin-email': username, 'admin-password': password });
+    const admin = await AdminDetails.findOne({ 'admin-email': username, 'admin-password': password });
 
-    if (teacher) {
-      res.json({ success: true, teacher: teacher });
+    if (admin) {
+      res.json({ success: true, admin: admin });
     } else {
       res.json({ success: false, message: 'User Not Found' });
     }
@@ -137,6 +137,21 @@ server.get('/administrator/authentication/:username/:password', async (req, res)
     console.log(error);
     res.status(500).json({ error: `Internal Server Error: ${error.message}` });
   }
+});
+
+server.post('/techer/addcourses', async (req, res) => {
+  const { subjectName, subjectCredit, subjectCode, subjectTeacher, subjectModules } = req.body;
+  const course = new CourseDetails();
+  course.subjectName = subjectName;
+  course.subjectCode = subjectCode;
+  course.subjectCredit = subjectCredit;
+  course.subjectTeacher = subjectTeacher;
+  course.subjectModules = subjectModules;
+
+  // await course.save();
+
+  res.json({success:true, course : course});
+  console.log(course);
 });
 
 

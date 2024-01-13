@@ -9,7 +9,6 @@ const Homepage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { search } = useParams();
-  console.log({search});
 
   const fetchData = async () => {
     try { 

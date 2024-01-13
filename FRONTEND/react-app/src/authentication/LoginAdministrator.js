@@ -32,7 +32,7 @@ const LoginAdministrator = () => {
     const data = await response.json();
     if (data.success) {
       dispatch({ type: "ADMIN", payload: "admin" });
-      history.push("/admindashboard");
+      history.push("/admindashboard", { adminData: data.admin });
     } else {
       setDialogueMessage(data.message);
       setShowDialogue(true);

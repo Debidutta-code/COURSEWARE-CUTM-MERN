@@ -8,14 +8,15 @@ import CourseDetails from './components/CourseDetails';
 import LoginAdministrator from './authentication/LoginAdministrator';
 import { createContext, useReducer } from 'react';
 import { initialState, reducer } from './reducer/UseReducer';
-import TeacherDashboard from './components/TeacherDashboard';
+import TeacherDashboard from './teacheraction/TeacherDashboard';
 import Logout from './authentication/Logout';
-import AddCourses from './components/AddCourses';
-import Admindashboard from './components/AdminDashboard';
+import AddCourses from './teacheraction/AddCourses';
+import Admindashboard from './adminaction/AdminDashboard';
 import Footer from './components/Footer';
-import ModifyCourses from './components/ModifyCourses';
-import DeleteCourses from './components/DeleteCourses';
-import UserProfile from './components/UserProfile';
+import ModifyCourses from './teacheraction/ModifyCourses';
+import DeleteCourses from './teacheraction/DeleteCourses';
+import UserProfile from './teacheraction/UserProfile';
+import AdminUserProfile from './adminaction/AdminUserProfile';
 
 export const UserContext = createContext();
 
@@ -40,6 +41,7 @@ function App() {
           <Route path = '/modifycourses'> <ModifyCourses /> </Route>
           <Route path = '/deletecourses'> <DeleteCourses /> </Route>
           <Route path = '/userprofile'> <UserProfile /> </Route>
+          <Route path = '/adminuserprofile'> <AdminUserProfile /> </Route>
         </Switch>
         </UserContext.Provider>
         <Footer></Footer>
