@@ -15,11 +15,10 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   max-width: 500px;
   width: 100%;
-  margin: 20px; /* Added margin for separation */
-  margin-left: 190px;
+  margin: 20px auto; /* Set margin: auto to horizontally center the div */
 }
 
-.addcourses-menu-item:active{
+.addcourses-menu-item:active {
   transform: scale(0.85);
 }
 
@@ -84,4 +83,46 @@ button:hover {
 
 .remove-module-button:hover {
   background-color: #c20013;
+}
+
+@media screen and (max-width: 768px) {
+  .add-courses-form {
+    padding: 20px;
+    /* Adjusted padding for smaller screens */
+  }
+
+  input {
+    width: 100%;
+    /* Make the input fields full width */
+  }
+
+  button {
+    width: 100%;
+    /* Make the buttons full width */
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media screen and (max-width: 480px) {
+  .add-courses-form {
+    margin: 10px;
+    /* Further reduced margin for smaller screens */
+  }
+
+  label {
+    font-size: 14px;
+    /* Adjusted font size for labels on smaller screens */
+  }
+
+  input,
+  button,
+  .remove-module-button {
+    font-size: 14px;
+    /* Adjusted font size for inputs, buttons, and remove-module button */
+  }
+
+  .module-input-container {
+    flex-direction: column;
+    /* Stack modules vertically on smaller screens */
+  }
 }
