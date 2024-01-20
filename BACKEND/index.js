@@ -148,7 +148,7 @@ server.post('/techer/addcourses', async (req, res) => {
   course.subjectTeacher = subjectTeacher;
   course.subjectModules = subjectModules;
 
-  // await course.save();
+  await course.save();
 
   res.json({success:true, course : course});
   console.log(course);

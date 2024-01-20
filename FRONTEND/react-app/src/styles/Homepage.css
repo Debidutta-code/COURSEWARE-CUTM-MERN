@@ -3,7 +3,7 @@
     text-align: center;
     margin: 20px;
     color: black;
-    min-height: 59.7vh;
+    min-height: 61.5vh;
   }
   
   .homepage h1 {
@@ -17,5 +17,5 @@
   
   .refresh-data-btn:hover{
     background-color: rgb(53, 27, 102);
-
   }
+  

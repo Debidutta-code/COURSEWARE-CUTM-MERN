@@ -21,10 +21,10 @@ const AddCourses = () => {
         subjectCredit,
         subjectCode,
         subjectTeacher,
-        subjectModules,
+        subjectModules
       }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type' : 'application/json'
       }
     });
 
