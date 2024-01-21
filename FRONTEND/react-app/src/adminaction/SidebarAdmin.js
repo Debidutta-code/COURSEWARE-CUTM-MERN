@@ -19,6 +19,7 @@ const SidebarAdmin = () => {
         />
         <h3>{adminData ? adminData['admin_name'] : 'Admin Name'}</h3>
       </div>
+      
       <Link
         to={{
           pathname: '/admindashboard',
@@ -28,6 +29,16 @@ const SidebarAdmin = () => {
       >
         <i className="fas fa-tachometer-alt"></i>
         Dashboard
+      </Link>
+      <Link
+        to={{
+          pathname: '/teacheractivity',
+          state: { adminData: adminData },
+        }}
+        className="menu-item dashboard-menu-item"
+      >
+        <i className="fas fa-tachometer-alt"></i>
+        Teacher Activity
       </Link>
       <Link
         to={{

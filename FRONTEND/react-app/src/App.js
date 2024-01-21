@@ -17,6 +17,9 @@ import ModifyCourses from './teacheraction/ModifyCourses';
 import DeleteCourses from './teacheraction/DeleteCourses';
 import UserProfile from './teacheraction/UserProfile';
 import AdminUserProfile from './adminaction/AdminUserProfile';
+import TeacherActivity from './adminaction/TeacherActivity';
+import TeacherLoginDetails from './adminaction/TeacherLoginDetails';
+import AddTeacher from './adminaction/AddTeacher';
 
 export const UserContext = createContext();
 
@@ -42,6 +45,9 @@ function App() {
           <Route path = '/deletecourses'> <DeleteCourses /> </Route>
           <Route path = '/userprofile'> <UserProfile /> </Route>
           <Route path = '/adminuserprofile'> <AdminUserProfile /> </Route>
+          <Route path = '/teacheractivity'> <TeacherActivity /> </Route>
+          <Route path = '/teacherlogindetails'> <TeacherLoginDetails /> </Route>
+          <Route path = '/addteacher'> <AddTeacher /> </Route>
         </Switch>
         </UserContext.Provider>
         <Footer></Footer>

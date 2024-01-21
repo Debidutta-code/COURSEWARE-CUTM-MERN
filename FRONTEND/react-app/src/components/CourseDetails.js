@@ -28,7 +28,7 @@ const CourseDetails = () => {
         <h2 className="modules-title">Modules:</h2>
         <ul className="modules-list">
           {Object.entries(courseDetails['subject_modules']).map(([moduleKey, moduleName], index) => (
-            <li key={moduleKey}>
+            <li key={index}>
               Module {index + 1}: {moduleName}
             </li>
           ))}

@@ -5,7 +5,7 @@ const Card = ({ course }) => {
   const history = useHistory();
 
   const cardClicked = async () => {
-    const response = await fetch(`http://localhost:8080/cardclicked/${course.subject_code}`, {
+    const response = await fetch(`http://localhost:8080/cardclicked/${course['subject_code']}`, {
       method: "GET",
     });
 
@@ -20,9 +20,9 @@ const Card = ({ course }) => {
   return (
     <div className="card" onClick={cardClicked}>
       <div className="card-content">
-        <h2>{course.subject_name}</h2>
-        <h4>By : {course.subject_teacher}</h4>
-        <h4>Code : {course.subject_code}</h4>
+        <h2>{course['subject_name']}</h2>
+        <h4>By : {course['subject_teacher']}</h4>
+        <h4>Code : {course['subject_code']}</h4>
       </div>
     </div>
   );

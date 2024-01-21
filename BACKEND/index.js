@@ -19,23 +19,23 @@ async function main() {
 }
 
 const courseSchema = new mongoose.Schema({
-  subjectName: {
+  subject_name: {
     type: String,
     required: true,
   },
-  subjectCredit: {
+  subject_credit: {
     type: Number,
     required: true,
   },
-  subjectTeacher: {
+  subject_teacher: {
     type: String,
     required: true,
   },
-  subjectModules: {
+  subject_modules: {
     type: Object,
     required: true,
   },
-  subjectCode: {
+  subject_code: {
     type: String,
     required: true,
   }
@@ -142,11 +142,11 @@ server.get('/administrator/authentication/:username/:password', async (req, res)
 server.post('/techer/addcourses', async (req, res) => {
   const { subjectName, subjectCredit, subjectCode, subjectTeacher, subjectModules } = req.body;
   const course = new CourseDetails();
-  course.subjectName = subjectName;
-  course.subjectCode = subjectCode;
-  course.subjectCredit = subjectCredit;
-  course.subjectTeacher = subjectTeacher;
-  course.subjectModules = subjectModules;
+  course.subject_name = subjectName;
+  course.subject_code = subjectCode;
+  course.subject_credit = subjectCredit;
+  course.subject_teacher = subjectTeacher;
+  course.subject_modules = subjectModules;
 
   await course.save();
 

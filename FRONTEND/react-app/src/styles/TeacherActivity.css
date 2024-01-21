@@ -1,0 +1,53 @@
+/* TeacherActivity.css */
+
+.teacher-activity {
+    display: flex;
+    text-decoration: none;
+  }
+  
+  .teacher-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .teacher-main-content {
+    padding: 30px 45px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-between;
+  }
+  
+  /* Styles for individual cards */
+  .teacher-card {
+    width: 48%; /* Adjust the width as needed */
+    max-width: 400px; /* Maximum width for each card */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out; 
+  }
+  .teacher-card:hover {
+    transform: scale(1.06);
+    cursor: pointer;
+  }
+  
+  /* Additional styling for heading and paragraph if needed */
+  .teacher-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .teacher-card p {
+    line-height: 1.4;
+    color: black;
+    text-decoration: none;
+  }
+  
