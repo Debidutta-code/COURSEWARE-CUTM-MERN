@@ -11,7 +11,7 @@ const TeacherActivity = () => {
 
   const handleTeacherLoginDetails = () => {
     console.log("Teacher Login Details");
-    
+
   }
   const handleModifyCourses = () => {
     console.log("Add or Delete Courses");
@@ -29,23 +29,23 @@ const TeacherActivity = () => {
 
 
           <div className="teacher-card">
-            <Link to="/teacherlogindetails" onClick={handleTeacherLoginDetails}>
+            <Link to={{ pathname: "/teacherlogindetails", state: { adminData } }} onClick={handleTeacherLoginDetails}>
               <h2>Teacher Login Details</h2>
               <p>Look up the time when a teacher logged in</p>
             </Link>
           </div>
 
           <div className="teacher-card">
-            <Link to="/teacherlogindetails" onClick={handleTeacherLoginDetails}>
-            <h2>Requests</h2>
-            <p>Request May Contain Adding Or Deleting Courses</p>
+            <Link to={{ pathname: "/requestpage", state: { adminData } }} onClick={handleModifyCourses}>
+              <h2>Requests</h2>
+              <p>Request May Contain Adding Or Deleting Courses</p>
             </Link>
           </div>
 
           <div className="teacher-card">
-            <Link to="/addteacher" onClick={handleTeacherLoginDetails}>
-            <h2>Add Teacher</h2>
-            <p>Add details for a new teacher</p>
+            <Link to={{ pathname: "/addteacher", state: { adminData } }} onClick={handleAddTeacher}>
+              <h2>Add Teacher</h2>
+              <p>Add details for a new teacher</p>
             </Link>
           </div>
 

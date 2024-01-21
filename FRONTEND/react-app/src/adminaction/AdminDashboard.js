@@ -9,7 +9,6 @@ const AdminDashboard = () => {
   const location = useLocation();
   const adminData = location.state && location.state.adminData;
 
-  console.log("tjos osasdf", adminData);
   return (
     <div className="admin-dashboard">
       <SidebarAdmin adminData={adminData} />

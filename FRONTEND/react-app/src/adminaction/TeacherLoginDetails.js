@@ -9,6 +9,8 @@ const TeacherLoginDetails = () => {
   const location = useLocation();
   const adminData = location.state && location.state.adminData;
 
+  console.log("teacherlogindetails", adminData)
+
   return (
     <div className="admin-dashboard">
       <SidebarAdmin adminData={adminData} />

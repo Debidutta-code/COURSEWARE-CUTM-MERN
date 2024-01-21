@@ -42,15 +42,15 @@ const courseSchema = new mongoose.Schema({
 });
 
 const teacherSchema = new mongoose.Schema({
-  teacherName: {
+  teacher_name: {
     type: String,
     required: true,
   },
-  teacherEmail: {
+  teacher_email: {
     type: String,
     required: true,
   },
-  teacherPassword: {
+  teacher_password: {
     type: String,
     required: true,
   },
@@ -153,6 +153,21 @@ server.post('/techer/addcourses', async (req, res) => {
   res.json({success:true, course : course});
   console.log(course);
 });
+
+server.post('/addteacher', async (req, res) => {
+  const {name, email, password} = req.body;
+  
+  const teacher = new TeacherDetails();
+
+  teacher.teacher_name = name;
+  teacher.teacher_email = email;
+  teacher.teacher_password = password;
+
+  await teacher.save();
+
+  res.json({success : true, teacher : teacher});
+  console.log(teacher);
+})
 
 
 server.listen(8080, () => {

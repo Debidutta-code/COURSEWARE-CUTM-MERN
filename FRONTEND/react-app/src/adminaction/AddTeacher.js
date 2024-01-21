@@ -3,36 +3,41 @@ import '../styles/AddCourses.css'; // Import the CSS file
 import SidebarAdmin from './SidebarAdmin';
 
 const AddTeacher = () => {
-    const [formData, setFormData] = useState({
-        teacherName: '',
-        emailId: '',
-        password: '',
-        reEnterPassword: '',
-    });
-
-    const [passwordMatchError, setPasswordMatchError] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-
-        if (name === 'reEnterPassword') {
-            // Check if the passwords match
-            if (formData.password !== value) {
-                setPasswordMatchError('Passwords do not match');
-            } else {
-                setPasswordMatchError('');
-            }
+        if(e.target.name === "teacherName"){
+            setName(e.target.value);
+        }
+        else if(e.target.name === "emailId"){
+            setEmail(e.target.value);
+        }
+        else if(e.target.name === "password"){
+            setPassword(e.target.value);
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
+        const response = await fetch("http://localhost:8080/addteacher", {
+            method: "POST",
+            body: JSON.stringify({name, email, password}),
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        })
+
+        const data = await response.json();
+
+        if(data.success){
+            console.log(data.teacher);
+        }
+        else{
+            console.log("error adding a new teacher");
+        }
     };
 
     return (
@@ -42,7 +47,7 @@ const AddTeacher = () => {
             <div className="content">
                 {/* Add main content here */}
                 <div className="main-content">
-                    <div> {JSON.stringify(formData)} </div>
+                    <div> {JSON.stringify({name, email, password})} </div>
                     <form className="add-courses-form" onSubmit={handleSubmit}>
                         <h1>Add Teacher</h1>
 
@@ -53,7 +58,6 @@ const AddTeacher = () => {
                                 name="teacherName"
                                 required
                                 onChange={handleChange}
-                                value={formData.teacherName}
                             />
                         </label>
 
@@ -64,7 +68,6 @@ const AddTeacher = () => {
                                 name="emailId"
                                 required
                                 onChange={handleChange}
-                                value={formData.emailId}
                             />
                         </label>
 
@@ -75,20 +78,7 @@ const AddTeacher = () => {
                                 name="password"
                                 required
                                 onChange={handleChange}
-                                value={formData.password}
                             />
-                        </label>
-
-                        <label>
-                            Re-Enter Password:
-                            <input
-                                type="password"
-                                name="reEnterPassword"
-                                required
-                                onChange={handleChange}
-                                value={formData.reEnterPassword}
-                            />
-                            {passwordMatchError && <p className="error-message">{passwordMatchError}</p>}
                         </label>
 
                         <button type="submit">Add Teacher</button>
