@@ -12,7 +12,7 @@ import TeacherDashboard from './teacheraction/TeacherDashboard';
 import Logout from './authentication/Logout';
 import AddCourses from './teacheraction/AddCourses';
 import Admindashboard from './adminaction/AdminDashboard';
-import Footer from './components/Footer';
+import Footer from  './components/Footer';
 import ModifyCourses from './teacheraction/ModifyCourses';
 import DeleteCourses from './teacheraction/DeleteCourses';
 import UserProfile from './teacheraction/UserProfile';

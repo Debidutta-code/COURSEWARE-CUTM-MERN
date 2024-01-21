@@ -19,7 +19,7 @@ const Homepage = () => {
 
       const data = await response.json();
 
-      const sortedCourses = data.sort((a, b) => a['subject-name'].localeCompare(b['subject-name']));
+      const sortedCourses = data.sort((a, b) => a['subject_name'].localeCompare(b['subject_name']));
 
       setCourses(sortedCourses);
       setLoading(false);
@@ -36,8 +36,8 @@ const Homepage = () => {
 
   const filteredCourses = courses.filter(course =>
     (search ?
-        course['subject-name'].toLowerCase().includes(search.toLowerCase()) ||
-        course['subject-code'].toLowerCase().includes(search.toLowerCase()) :
+        course['subject_name'].toLowerCase().includes(search.toLowerCase()) ||
+        course['subject_code'].toLowerCase().includes(search.toLowerCase()) :
         true
     )
   );

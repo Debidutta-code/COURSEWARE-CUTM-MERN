@@ -17,7 +17,7 @@ const SidebarAdmin = () => {
           alt="User"
           className="user-photo"
         />
-        <h3>{adminData ? adminData['admin-name'] : 'Admin Name'}</h3>
+        <h3>{adminData ? adminData['admin_name'] : 'Admin Name'}</h3>
       </div>
       <Link
         to={{

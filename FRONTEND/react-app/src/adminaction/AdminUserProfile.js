@@ -26,9 +26,9 @@ const AdminUserProfile = () => {
                                 className="user-avatar"
                             />
                             <div className="user-text">
-                                <h2>{adminData['admin-name']}</h2>
+                                <h2>{adminData['admin_name']}</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus gravida ex, nec bibendum lacus accumsan vel.</p>
-                                <Link to="/edit-profile" className="edit-profile-button">
+                                <Link to="/admineditprofile" className="edit-profile-button">
                                     Edit Profile
                                 </Link>
                             </div>

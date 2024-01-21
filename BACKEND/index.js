@@ -93,7 +93,7 @@ server.get('/homepagecontent', async (req, res) => {
 server.get('/cardclicked/:subjectCode', async (req, res) => {
   const subjectCode = req.params.subjectCode;  // Use req.params.subjectCode to access the parameter
   try {
-    const course = await CourseDetails.find({ 'subject-code': subjectCode });
+    const course = await CourseDetails.find({ 'subject_code': subjectCode });
     if (course.length > 0) {
       res.json({ success: true, course: course[0] });
     } else {
@@ -109,7 +109,7 @@ server.get('/teacher/authentication/:username/:password', async (req, res) => {
   const { username, password } = req.params;
 
   try {
-    const teacher = await TeacherDetails.findOne({ 'teacher-email': username, 'teacher-password': password });
+    const teacher = await TeacherDetails.findOne({ 'teacher_email': username, 'teacher_password': password });
 
     if (teacher) {
       res.json({ success: true, teacher: teacher });
@@ -126,7 +126,7 @@ server.get('/administrator/authentication/:username/:password', async (req, res)
   const { username, password } = req.params;
 
   try {
-    const admin = await AdminDetails.findOne({ 'admin-email': username, 'admin-password': password });
+    const admin = await AdminDetails.findOne({ 'admin_email': username, 'admin_password': password });
 
     if (admin) {
       res.json({ success: true, admin: admin });

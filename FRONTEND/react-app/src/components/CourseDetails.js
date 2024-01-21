@@ -11,23 +11,23 @@ const CourseDetails = () => {
     return <p>No course details available.</p>;
   }
 
-  const subject = courseDetails['subject-name'];
+  const subject = courseDetails['subject_name'];
 
   return (
     <div className="course-details-card">
       <h1 className="course-title">{subject}</h1>
       <div className="details-info">
         <p>
-          <strong>Teacher:</strong> {courseDetails['subject-teacher']}
+          <strong>Teacher:</strong> {courseDetails['subject_teacher']}
         </p>
         <p>
-          <strong>Credit:</strong> {courseDetails['subject-credit']}
+          <strong>Credit:</strong> {courseDetails['subject_credit']}
         </p>
       </div>
       <div>
         <h2 className="modules-title">Modules:</h2>
         <ul className="modules-list">
-          {Object.entries(courseDetails['subject-modules']).map(([moduleKey, moduleName], index) => (
+          {Object.entries(courseDetails['subject_modules']).map(([moduleKey, moduleName], index) => (
             <li key={moduleKey}>
               Module {index + 1}: {moduleName}
             </li>

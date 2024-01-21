@@ -17,7 +17,7 @@ const Sidebar = () => {
                     alt="User"
                     className="user-photo"
                 />
-                <h3>{teacherData ? teacherData['teacher-name'] : 'Teacher Name'}</h3>
+                <h3>{teacherData ? teacherData['teacher_name'] : 'Teacher Name'}</h3>
             </div>
             <Link
           to={{

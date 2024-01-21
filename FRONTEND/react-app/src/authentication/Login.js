@@ -18,6 +18,7 @@ const Login = () => {
     }
     if (e.target.name === "password") {
       setPassword(e.target.value);
+      console.log(e.target.value);
     }
   }
 

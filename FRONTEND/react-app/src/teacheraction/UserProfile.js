@@ -18,7 +18,6 @@ const UserProfile = () => {
                 {/* Add main content for UserProfile here */}
                 <div className="main-content">
                     <div className="user-details">
-                        <h1>Teacher Profile</h1>
                         <div className="user-info">
                             <img
                                 src="https://placekitten.com/150/150" // Replace with the actual URL of the user's avatar
@@ -26,9 +25,9 @@ const UserProfile = () => {
                                 className="user-avatar"
                             />
                             <div className="user-text">
-                                <h2>{teacherData['admin-name']}</h2>
+                                <h2>{teacherData['teacher_name']}</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus gravida ex, nec bibendum lacus accumsan vel.</p>
-                                <Link to="/edit-profile" className="edit-profile-button">
+                                <Link to="/teachereditprofile" className="edit-profile-button">
                                     Edit Profile
                                 </Link>
                             </div>

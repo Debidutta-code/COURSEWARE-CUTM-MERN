@@ -41,7 +41,7 @@ const Navbar = () => {
     else if(state === "admin"){
       return(
         <div className="left-section">
-          <Link to="/admindashboard"> <button type='button' className='teacher-home-button'>Dashboard</button> </Link>
+          {/* <Link to="/admindashboard"> <button type='button' className='teacher-home-button'>Dashboard</button> </Link> */}
           {/* <button type="button" className="home-button"><Link to="/" className="nav-link">Home</Link></button> */}
         </div>
       )
