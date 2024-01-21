@@ -9,17 +9,6 @@ const TeacherActivity = () => {
   const location = useLocation();
   const adminData = location.state && location.state.adminData;
 
-  const handleTeacherLoginDetails = () => {
-    console.log("Teacher Login Details");
-
-  }
-  const handleModifyCourses = () => {
-    console.log("Add or Delete Courses");
-  }
-  const handleAddTeacher = () => {
-    console.log("Add Teacher");
-  }
-
   return (
     <div className="teacher-activity">
       <SidebarAdmin adminData={adminData} />
@@ -29,21 +18,21 @@ const TeacherActivity = () => {
 
 
           <div className="teacher-card">
-            <Link to={{ pathname: "/teacherlogindetails", state: { adminData } }} onClick={handleTeacherLoginDetails}>
+            <Link to={{ pathname: "/teacherlogindetails", state: { adminData } }}>
               <h2>Teacher Login Details</h2>
               <p>Look up the time when a teacher logged in</p>
             </Link>
           </div>
 
           <div className="teacher-card">
-            <Link to={{ pathname: "/requestpage", state: { adminData } }} onClick={handleModifyCourses}>
+            <Link to={{ pathname: "/requestpage", state: { adminData } }}>
               <h2>Requests</h2>
               <p>Request May Contain Adding Or Deleting Courses</p>
             </Link>
           </div>
 
           <div className="teacher-card">
-            <Link to={{ pathname: "/addteacher", state: { adminData } }} onClick={handleAddTeacher}>
+            <Link to={{ pathname: "/addteacher", state: { adminData } }}>
               <h2>Add Teacher</h2>
               <p>Add details for a new teacher</p>
             </Link>
