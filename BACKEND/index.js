@@ -131,7 +131,9 @@ server.get('/teacher/authentication/:username/:password', async (req, res) => {
     const teacher = await TeacherDetails.findOne({ 'teacher_email': username, 'teacher_password': password });
 
     if (teacher) {
-      res.json({ success: true, teacher: teacher });
+      const time = new Date().toLocaleTimeString();
+      const date = new Date().toLocaleDateString();
+      res.json({ success: true, teacher: teacher, time : time, date : date });
     } else {
       res.json({ success: false, message: 'User Not Found' });
     }
@@ -188,10 +190,38 @@ server.post('/addteacher', async (req, res) => {
   console.log(teacher);
 })
 
-server.get('/logindetails', async (req, res) => {
-  const { loginTime, loginDate, data } = req.body;
+server.post('/teacherlogindetails', async (req, res) => {
+  const { name, login_time, logout_time, login_date } = req.body;
 
-  console.log(loginDate);
+  try {
+    const teacherLogin = new TeacherLoginDetails({
+      teacher_name: name,
+      teacher_login_time: login_time,
+      teacher_logout_time: logout_time,
+      teacher_login_date: login_date,
+    });
+
+    // Save the login details to the database
+    await teacherLogin.save();
+
+
+    console.log(teacherLogin);
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: `Internal Server Error: ${error.message}` });
+  }
+});
+
+
+server.get('/teacherlogindetails', async (req, res) => {
+  try {
+    const teachers = await TeacherLoginDetails.find();
+    res.json({success : true, teachers : teachers});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: `Internal Server Error: ${error.message}` });
+  }
 })
 
 server.listen(8080, () => {

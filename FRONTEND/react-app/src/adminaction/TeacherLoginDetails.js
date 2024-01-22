@@ -1,6 +1,6 @@
-// TeacherLoginDetails.js
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import { format, parseISO } from 'date-fns';
 import '../styles/AdminDashboard.css';
 import SidebarAdmin from './SidebarAdmin';
 import Table from './Table';
@@ -8,12 +8,40 @@ import Table from './Table';
 const TeacherLoginDetails = () => {
   const location = useLocation();
   const adminData = location.state && location.state.adminData;
+  const history = useHistory();
 
-  const data = [
-    { teacherName: 'John Doe', loginTime: '09:00 AM', logoutTime: '04:30 PM', date: '2024-01-22' },
-    { teacherName: 'Jane Smith', loginTime: '08:45 AM', logoutTime: '05:15 PM', date: '2024-01-23' },
-    // Add more data as needed
-  ];
+  const [teacherData, setTeacherData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/teacherlogindetails", {
+          method: "GET",
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          const sortedTeacherData = data.teachers.sort((a, b) => {
+            const dateTimeA = `${a.teacher_login_date} ${a.teacher_login_time}`;
+            const dateTimeB = `${b.teacher_login_date} ${b.teacher_login_time}`;
+            return parseISO(dateTimeB) - parseISO(dateTimeA);
+          });
+
+          setTeacherData(sortedTeacherData.reverse());
+        } else {
+          console.error("Error fetching teacher login details");
+        }
+      } catch (error) {
+        console.error("Error fetching teacher login details:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleGoBack = () => {
+    history.goBack();
+  };
 
   return (
     <div className="admin-dashboard">
@@ -21,8 +49,13 @@ const TeacherLoginDetails = () => {
 
       <div className="content">
         <div className="main-content">
-          <h1>Teacher Login Details</h1>
-          <Table data={data} />
+          <div className="header">
+            <button className="back-button" onClick={handleGoBack}>
+              Back
+            </button>
+            <h1>Teacher Login Details</h1>
+          </div>
+          <Table data={teacherData} />
         </div>
       </div>
     </div>

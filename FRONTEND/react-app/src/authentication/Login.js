@@ -24,38 +24,44 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const response = await fetch(`http://localhost:8080/teacher/authentication/${username}/${password}`, {
       method: "GET",
     });
-
+  
     const data = await response.json();
     if (data.success) {
-      const loginTime = new Date().toLocaleTimeString();
-      const loginDate = new Date().toLocaleDateString();
-      
-      await fetch('http://localhost:8080/logindetails', {
-        method : "POST",
-        body : JSON.stringify({
-          loginTime,
-          loginDate
+
+      console.log(data);
+      // Log the login date and time
+      const loginDateTime = new Date();
+      console.log("Login Date:", loginDateTime.toLocaleDateString());
+      console.log("Login Time:", loginDateTime.toLocaleTimeString());
+  
+      // Send data to the server
+      await fetch("http://localhost:8080/teacherlogindetails", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.teacher.teacher_name,
+          login_time: loginDateTime.toLocaleTimeString(),
+          logout_time: "",
+          login_date: loginDateTime.toLocaleDateString(),
+          // You may add more data as needed
         }),
-        headers:{
-          "Content-Type" : "application/json"
-        }
-      })
-
+      });
+  
       dispatch({ type: "TEACHER", payload: "teacher" });
-      console.log(data.teacher);
-
+  
       history.push('/teacherdashboard', { teacherData: data.teacher });
-
-    } 
-    else {
+    } else {
       setDialogueMessage(data.message);
       setShowDialogue(true);
     }
-  }
+  };
+  
 
   const closeDialogue = () => {
     setShowDialogue(false);

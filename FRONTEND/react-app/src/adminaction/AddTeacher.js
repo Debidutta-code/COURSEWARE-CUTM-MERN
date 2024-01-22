@@ -1,48 +1,50 @@
 import React, { useState } from 'react';
-import '../styles/AddCourses.css'; // Import the CSS file
+import { useHistory } from 'react-router-dom';
+import '../styles/AddCourses.css';
 import SidebarAdmin from './SidebarAdmin';
 
 const AddTeacher = () => {
+    const history = useHistory();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleChange = (e) => {
-        if(e.target.name === "teacherName"){
+        if (e.target.name === "teacherName") {
             setName(e.target.value);
-        }
-        else if(e.target.name === "emailId"){
+        } else if (e.target.name === "emailId") {
             setEmail(e.target.value);
-        }
-        else if(e.target.name === "password"){
+        } else if (e.target.name === "password") {
             setPassword(e.target.value);
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         const response = await fetch("http://localhost:8080/addteacher", {
             method: "POST",
-            body: JSON.stringify({name, email, password}),
+            body: JSON.stringify({ name, email, password }),
             headers: {
-                'Content-Type' : 'application/json'
+                'Content-Type': 'application/json'
             }
-        })
+        });
 
         const data = await response.json();
 
-        if(data.success){
+        if (data.success) {
             console.log(data.teacher);
-        }
-        else{
+        } else {
             console.log("error adding a new teacher");
         }
-
 
         setName("");
         setEmail("");
         setPassword("");
+    };
+
+    const handleGoBack = () => {
+        history.goBack();
     };
 
     return (
@@ -50,12 +52,14 @@ const AddTeacher = () => {
             <SidebarAdmin />
 
             <div className="content">
-                {/* Add main content here */}
                 <div className="main-content">
-                    <div> {JSON.stringify({name, email, password})} </div>
+                    <div className="header">
+                        {/* <button className="back-button" onClick={handleGoBack}>
+                            Back
+                        </button> */}
+                        {/* <h1>Add Teacher</h1> */}
+                    </div>
                     <form className="add-courses-form" onSubmit={handleSubmit}>
-                        <h1>Add Teacher</h1>
-
                         <label>
                             Teacher Name:
                             <input
@@ -86,7 +90,7 @@ const AddTeacher = () => {
                             />
                         </label>
 
-                        <button type="submit">Add Teacher</button>
+                        <button type="submit">Add a New Teacher</button>
                     </form>
                 </div>
             </div>

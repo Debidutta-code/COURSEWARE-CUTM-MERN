@@ -17,10 +17,10 @@ const Table = ({ data }) => {
         <tbody>
           {data.map((row, index) => (
             <tr key={index}>
-              <td>{row.teacherName}</td>
-              <td>{row.loginTime}</td>
-              <td>{row.logoutTime}</td>
-              <td>{row.date}</td>
+              <td>{row.teacher_name}</td>
+              <td>{row.teacher_login_time}</td>
+              <td>{row.teacher_logout_time}</td>
+              <td>{row.teacher_login_date}</td>
             </tr>
           ))}
         </tbody>
