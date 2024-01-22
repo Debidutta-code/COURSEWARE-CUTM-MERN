@@ -38,6 +38,11 @@ const AddTeacher = () => {
         else{
             console.log("error adding a new teacher");
         }
+
+
+        setName("");
+        setEmail("");
+        setPassword("");
     };
 
     return (

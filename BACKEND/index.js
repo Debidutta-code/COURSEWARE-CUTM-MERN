@@ -71,9 +71,28 @@ const adminSchema = new mongoose.Schema({
   },
 });
 
+const teacherLoginDetailsSchema = new mongoose.Schema({
+  teacher_name: {
+    type: String,
+    required: true,
+  },
+  teacher_login_time: {
+    type: String,
+    required: true,
+  },
+  teacher_logout_time: {
+    type: String,
+  },
+  teacher_login_date: {
+    type: String,
+    required: true,
+  },
+});
+
 const CourseDetails = mongoose.model('CourseDetails', courseSchema);
 const TeacherDetails = mongoose.model('teacherdetails', teacherSchema);
 const AdminDetails = mongoose.model('admindetails', adminSchema);
+const TeacherLoginDetails = mongoose.model('teacherlogindetails', teacherLoginDetailsSchema);
 
 const server = express();
 
@@ -169,6 +188,11 @@ server.post('/addteacher', async (req, res) => {
   console.log(teacher);
 })
 
+server.get('/logindetails', async (req, res) => {
+  const { loginTime, loginDate, data } = req.body;
+
+  console.log(loginDate);
+})
 
 server.listen(8080, () => {
   console.log("server running...");

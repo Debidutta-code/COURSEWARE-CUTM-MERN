@@ -31,10 +31,27 @@ const Login = () => {
 
     const data = await response.json();
     if (data.success) {
+      const loginTime = new Date().toLocaleTimeString();
+      const loginDate = new Date().toLocaleDateString();
+      
+      await fetch('http://localhost:8080/logindetails', {
+        method : "POST",
+        body : JSON.stringify({
+          loginTime,
+          loginDate
+        }),
+        headers:{
+          "Content-Type" : "application/json"
+        }
+      })
+
       dispatch({ type: "TEACHER", payload: "teacher" });
+      console.log(data.teacher);
+
       history.push('/teacherdashboard', { teacherData: data.teacher });
-      console.log("sent data : ", data.teacher);
-    } else {
+
+    } 
+    else {
       setDialogueMessage(data.message);
       setShowDialogue(true);
     }
