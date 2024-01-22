@@ -9,8 +9,8 @@ const Table = ({ data }) => {
         <thead>
           <tr>
             <th>Teacher Name</th>
-            <th>Login Time</th>
-            <th>Logout Time</th>
+            <th>Last Login Time</th>
+            {/* <th>Logout Time</th> */}
             <th>Date</th>
           </tr>
         </thead>
@@ -19,7 +19,7 @@ const Table = ({ data }) => {
             <tr key={index}>
               <td>{row.teacher_name}</td>
               <td>{row.teacher_login_time}</td>
-              <td>{row.teacher_logout_time}</td>
+              {/* <td>{row.teacher_logout_time}</td> */}
               <td>{row.teacher_login_date}</td>
             </tr>
           ))}
