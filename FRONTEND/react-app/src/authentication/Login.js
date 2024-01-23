@@ -24,20 +24,23 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const response = await fetch(`http://localhost:8080/teacher/authentication/${username}/${password}`, {
       method: "GET",
     });
-  
+
     const data = await response.json();
     if (data.success) {
 
       console.log(data);
       // Log the login date and time
       const loginDateTime = new Date();
-      console.log("Login Date:", loginDateTime.toLocaleDateString());
+      const loginDate = `${loginDateTime.getDate().toString().padStart(2, '0')}-${(loginDateTime.getMonth() + 1).toString().padStart(2, '0')}-${loginDateTime.getFullYear()}`;
+      console.log("Login Date:", loginDate);
       console.log("Login Time:", loginDateTime.toLocaleTimeString());
-  
+
+
+      // Send data to the server
       // Send data to the server
       await fetch("http://localhost:8080/teacherlogindetails", {
         method: "POST",
@@ -48,20 +51,21 @@ const Login = () => {
           name: data.teacher.teacher_name,
           login_time: loginDateTime.toLocaleTimeString(),
           logout_time: "",
-          login_date: loginDateTime.toLocaleDateString(),
+          login_date: loginDate,
           // You may add more data as needed
         }),
       });
-  
+
+
       dispatch({ type: "TEACHER", payload: "teacher" });
-  
+
       history.push('/teacherdashboard', { teacherData: data.teacher });
     } else {
       setDialogueMessage(data.message);
       setShowDialogue(true);
     }
   };
-  
+
 
   const closeDialogue = () => {
     setShowDialogue(false);
