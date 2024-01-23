@@ -30,10 +30,14 @@ const TeacherDashboard = () => {
             </div>
           </Link>
 
-          {/* Queries with Admin Component */}
-          <div className="card">
-            <h2>Queries with Admin</h2>
-          </div>
+          <Link to={{
+            pathname: '/querywithadmin',
+            state: { teacherData: teacherData },
+          }}>
+            <div className='card'>
+              <h2>Queries with Admin</h2>
+            </div>
+          </Link>
 
           {/* Send Mail Form */}
           {/* ... (rest of the code remains unchanged) */}

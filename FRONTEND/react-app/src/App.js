@@ -22,6 +22,7 @@ import TeacherLoginDetails from './adminaction/TeacherLoginDetails';
 import AddTeacher from './adminaction/AddTeacher';
 import RequestPage from './adminaction/RequestsPage';
 import CoursesAssigned from './teacheraction/CoursesAssigned';
+import QueryWithAdmin from './teacheraction/QueryWithAdmin';
 
 export const UserContext = createContext();
 
@@ -52,6 +53,7 @@ function App() {
           <Route path = '/addteacher'> <AddTeacher /> </Route>
           <Route path = '/requestpage'> <RequestPage /> </Route>
           <Route path = '/coursesassigned'> <CoursesAssigned /> </Route>
+          <Route path = '/querywithadmin'> <QueryWithAdmin /> </Route>
         </Switch>
         </UserContext.Provider>
         <Footer></Footer>

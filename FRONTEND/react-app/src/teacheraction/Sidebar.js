@@ -39,7 +39,9 @@ const Sidebar = () => {
           <i className="fas fa-plus-circle"></i>
           Add Courses
         </Link>
-        <Link
+
+
+        {/* <Link
           to={{
             pathname: '/modifycourses',
             state: { teacherData: teacherData },
@@ -48,8 +50,10 @@ const Sidebar = () => {
         >
           <i className="fas fa-plus-circle"></i>
           Modify Courses
-        </Link>
-        <Link
+        </Link> */}
+
+
+        {/* <Link
           to={{
             pathname: '/deletecourses',
             state: { teacherData: teacherData },
@@ -58,7 +62,9 @@ const Sidebar = () => {
         >
           <i className="fas fa-plus-circle"></i>
           Delete Courses
-        </Link>
+        </Link> */}
+
+        
         <Link
           to={{
             pathname: '/userprofile',

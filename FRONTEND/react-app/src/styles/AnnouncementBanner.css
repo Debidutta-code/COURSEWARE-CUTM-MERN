@@ -1,0 +1,16 @@
+/* AnnouncementBanner.css (or your main CSS file) */
+
+.announcement-banner {
+    background-color: #1e2a38;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .announcement-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100px; /* Adjust the spacing as needed */
+  }
+  
