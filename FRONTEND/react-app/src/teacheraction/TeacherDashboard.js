@@ -1,8 +1,9 @@
 // TeacherDashboard.js
 
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import Sidebar from './Sidebar'; // Import the Sidebar component
+import { useLocation, Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import AnnouncementBanner from './AnnouncementBanner';
 import '../styles/TeacherDashboard.css';
 
 const TeacherDashboard = () => {
@@ -10,20 +11,35 @@ const TeacherDashboard = () => {
   const teacherData = location.state && location.state.teacherData;
 
   return (
-    <>
-      <div className="teacher-dashboard">
-        {/* Include the Sidebar component with teacherData prop */}
-        <Sidebar teacherData={teacherData} />
+    <div className="teacher-dashboard">
+      <Sidebar teacherData={teacherData} />
 
-        <div className="content">
-          {/* Add main content here */}
-          <div className="main-content">
-            <h1>Dashboard</h1>
-            {/* Add more content or components as needed */}
+      <div className="content">
+        <div className="main-content">
+
+          {/* Announcement Banner */}
+          <AnnouncementBanner />
+
+          {/* Link the "Course Assigned" card to a different page */}
+          <Link to={{
+            pathname: '/coursesassigned',
+            state: { teacherData: teacherData },
+          }}>
+            <div className='card'>
+              <h2>Course Assigned</h2>
+            </div>
+          </Link>
+
+          {/* Queries with Admin Component */}
+          <div className="card">
+            <h2>Queries with Admin</h2>
           </div>
+
+          {/* Send Mail Form */}
+          {/* ... (rest of the code remains unchanged) */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

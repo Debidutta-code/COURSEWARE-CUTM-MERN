@@ -7,9 +7,10 @@
 .content {
   flex-grow: 1;
   padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
 
-.dashboard-menu-item:active{
+.dashboard-menu-item:active {
   transform: scale(0.85);
 }
 
@@ -25,4 +26,101 @@
   padding: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+/* Styles for Cards */
+.card {
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: #1e2a38;
+}
+
+/* Styles for Sections */
+.section {
+  margin-top: 20px;
+}
+
+.section h2 {
+  color: #1e2a38;
+  margin-bottom: 10px;
+}
+
+.section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.section li {
+  margin: 5px 0;
+}
+
+/* Styles for Send Mail Form */
+.send-mail-form {
+  margin-top: 20px;
+}
+
+.send-mail-form h2 {
+  color: #1e2a38;
+  margin-bottom: 10px;
+}
+
+.send-mail-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.send-mail-form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.send-mail-form input,
+.send-mail-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.send-mail-form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #1e2a38;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.send-mail-form button:hover {
+  background-color: #40566b;
+}
+
+/* Styles for Announcement Banner */
+.announcement-banner {
+  background-color: #1e2a38;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.announcement-banner marquee {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .section {
+    font-size: smaller;
+  }
+
+  .card {
+    font-size: smaller;
+  }
 }
